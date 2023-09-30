@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import { Command } from "commander";
 import { readdir } from "node:fs/promises";
 
@@ -6,9 +8,18 @@ const program = new Command();
 const path = "./package.json";
 const file = Bun.file(path);
 
-const text = await file.text();
-const json = JSON.parse(text);
-const workspaces: string[] = json.workspaces;
+let workspaces: string[];
+try {
+  const text = await file.text();
+  const json = JSON.parse(text);
+  workspaces = json.workspaces;
+  if (!workspaces) {
+    throw new Error("No workspaces found in package.json");
+  }
+} catch (error) {
+  console.error(error);
+  throw new Error("Could not read package.json");
+}
 
 const packages = (
   await Promise.all(

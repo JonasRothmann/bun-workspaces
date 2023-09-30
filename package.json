@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "bin": {
-    "bun-workspaces": "index.ts"
+    "bun-workspaces": "dist/index.js"
   },
   "devDependencies": {
     "bun-types": "latest"
@@ -13,5 +13,9 @@
   },
   "dependencies": {
     "commander": "^11.0.0"
+  },
+  "scripts": {
+    "build": "bun build --target=bun ./index.ts --outdir=dist",
+    "clean": "rm -rf dist"
   }
 }
