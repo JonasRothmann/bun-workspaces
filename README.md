@@ -1,6 +1,6 @@
 # bun-workspaces
 
-To install dependencies:
+To install globally:
 
 ```bash
 bun install -g github:JonasRothmann/bun-workspaces
@@ -9,7 +9,6 @@ bun install -g github:JonasRothmann/bun-workspaces
 To run:
 
 ```bash
-bun run index.ts
+bun-workspaces --filter <package name> add elysia
+bun workspaces -F <package name> add elysia
 ```
-
-This project was created using `bun init` in bun v1.0.3. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

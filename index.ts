@@ -51,7 +51,10 @@ const packages = (
 ).flat();
 
 program
-  .option("--filter <type>", "a filter option")
+  .option(
+    "-F, --filter <package name>",
+    "the workspace package you are targetting"
+  )
   .arguments("<cmd> [args...]")
   .action(async (cmd, args, options) => {
     const filterName = program.opts().filter;

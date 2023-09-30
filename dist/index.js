@@ -1833,7 +1833,7 @@ var packages = (await Promise.all(workspaces.map((workspace) => "./" + workspace
   }));
   return dirs.filter(Boolean);
 }))).flat();
-program2.option("--filter <type>", "a filter option").arguments("<cmd> [args...]").action(async (cmd, args, options) => {
+program2.option("-F, --filter <package name>", "the workspace package you are targetting").arguments("<cmd> [args...]").action(async (cmd, args, options) => {
   const filterName = program2.opts().filter;
   const filter = packages.find((p) => p.name === filterName);
   const bunCommand = ["bun", cmd, ...args];
