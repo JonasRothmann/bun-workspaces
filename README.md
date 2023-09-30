@@ -10,5 +10,5 @@ To run:
 
 ```bash
 bun-workspaces --filter <package name> add elysia
-bun workspaces -F <package name> add elysia
+bun-workspaces -F <package name> add elysia
 ```
