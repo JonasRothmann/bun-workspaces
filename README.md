@@ -3,7 +3,7 @@
 To install dependencies:
 
 ```bash
-bun install
+bun install -g github:JonasRothmann/bun-workspaces
 ```
 
 To run:
