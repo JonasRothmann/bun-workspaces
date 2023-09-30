@@ -1,0 +1,15 @@
+{
+  "name": "bun-workspaces",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "123": "^0.0.1",
+    "commander": "^11.0.0"
+  }
+}
